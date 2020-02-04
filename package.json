@@ -1,0 +1,65 @@
+{
+  "name": "project.continuous-delivery-vue",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node server",
+    "hack:client": "vue-cli-service serve",
+    "hack:server": "nodemon server",
+    "hack": "concurrently \"yarn hack:server\" \"yarn hack:client\"",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test": "mocha --exit ./tests/test && yarn lint",
+    "migrate": "knex migrate:rollback --knexfile ./knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile ./knexfile.js",
+    "seed": "knex seed:run --knexfile ./knexfile.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "eslint-plugin-prettier": "^3.1.2",
+    "express": "^4.17.1",
+    "knex": "^0.20.8",
+    "morgan": "^1.9.1",
+    "pg": "^7.18.1",
+    "vue": "^2.6.11",
+    "vue2-google-maps": "^0.10.7",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.2",
+    "@vue/cli-plugin-eslint": "^4.1.2",
+    "@vue/cli-plugin-unit-mocha": "^4.1.2",
+    "@vue/cli-service": "^4.1.2",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "^1.0.0-beta.31",
+    "babel-eslint": "^10.0.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^10.0.7",
+    "nodemon": "^2.0.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "author": "GentaShibasaki <>",
+  "license": "MIT"
+}
