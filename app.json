@@ -2,8 +2,7 @@
   "environments": {
     "test": {
       "scripts": {
-        "start": "node server",
-        "test": "mocha --exit ./tests/test && vue-cli-service test:unit"
+        "test": "node server && mocha --exit ./tests/test && vue-cli-service test:unit"
       }
     }
   }
