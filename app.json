@@ -2,7 +2,7 @@
   "environments": {
     "test": {
       "scripts": {
-        "test": "node server && mocha --exit ./tests/test && vue-cli-service test:unit"
+        "test": "mocha --exit ./tests/test && vue-cli-service test:unit"
       }
     }
   }
