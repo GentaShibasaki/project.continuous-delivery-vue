@@ -6,7 +6,10 @@ const PORT = process.env.PORT || 9000;
 (async () => {
   try {
     console.log("Running migrations");
-    await db.migrate.latest();
+    await db.migrate
+      .latest()
+      .then(() => db.seed.run())
+      .then(() => console.log("seed step finished"));
 
     console.log("Starting express");
     app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));

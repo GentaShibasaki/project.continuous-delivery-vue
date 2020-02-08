@@ -2,7 +2,7 @@
   "environments": {
     "test": {
       "scripts": {
-        "test": "vue-cli-service test:unit"
+        "test": "mocha ./tests/test && vue-cli-service test:unit"
       }
     }
   }
