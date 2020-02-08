@@ -14,7 +14,6 @@ describe("tests for our server", () => {
 
   describe("GET api/locations", () => {
     it("this api can get all locations data", async () => {
-      console.log(request);
       const res = await request.get("/api/locations");
       const result = await db.select().table("locations");
       JSON.stringify(res.body).should.equal(JSON.stringify(result));

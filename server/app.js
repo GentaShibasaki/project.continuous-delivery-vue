@@ -16,7 +16,6 @@ app.use(
 app.use(express.static(path.resolve(__dirname, "..", "dist")));
 
 app.get("/api/locations", async (req, res) => {
-  console.log("brabrabra");
   try {
     const locations = await db.select().table("locations");
     res.json(locations);
