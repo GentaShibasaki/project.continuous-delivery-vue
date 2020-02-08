@@ -17,6 +17,7 @@ describe("tests for our server", () => {
       const res = await request.get("/api/locations");
       console.log("YEY!!");
       const result = await db.select().table("locations");
+      console.log(result);
       JSON.stringify(res.body).should.equal(JSON.stringify(result));
     });
   });
