@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Go rub Potato's belly for good luck!"/>
+    <img src="./assets/logo.png" />
+    <HelloWorld msg="Go rub Potato's belly for good luck!" />
     <div>
       <Map />
     </div>
