@@ -2,7 +2,6 @@
   "environments": {
     "test": {
       "scripts": {
-        "test-setup": "yarn add chai && @vue/unit-mocha",
         "test": "vue-cli-service test:unit"
       }
     }
