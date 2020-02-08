@@ -1,12 +1,8 @@
 {
   "environments": {
     "test": {
-      "env": {
-        "DATABASE_URL": {
-          "required": true
-        }
-      },
       "scripts": {
+        "start": "node server",
         "test": "mocha --exit ./tests/test && vue-cli-service test:unit"
       }
     }
