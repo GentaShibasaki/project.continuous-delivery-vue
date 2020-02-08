@@ -2,7 +2,9 @@
   "environments": {
     "test": {
       "env": {
-        "DATABASE_URL": "postgres://ouqmcuaoluvlch:ea450efe62cc52253fc2ae4d131bc1b0b2ece9f9d96978fe54bd006ca60f9cac@ec2-184-72-236-57.compute-1.amazonaws.com:5432/d9poj07ppppak"
+        "DATABASE_URL": {
+          "required": true
+        }
       },
       "scripts": {
         "test": "mocha --exit ./tests/test && vue-cli-service test:unit"
